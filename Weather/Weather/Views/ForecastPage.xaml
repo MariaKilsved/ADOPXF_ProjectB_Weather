@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather.Views.ForecastPage"
+             Title="Miami">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button
+                Clicked="Button_Clicked"
+                Text="Refresh"></Button>
+            <StackLayout
+                x:Name="errorMsg"
+                IsVisible="false">
+                <Label
+                    Text="Geolocation weather service error." />
+                <Label x:Name="errorMsgEx" Text=""/>
+            </StackLayout>
+            <ActivityIndicator
+                x:Name="loading" IsRunning="False"></ActivityIndicator>
+            <ListView
+                x:Name="GroupedForecastListView"
+                IsGroupingEnabled="true"
+                HasUnevenRows="true">
+                <ListView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <ViewCell
+                            Height="40">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                HeightRequest="40"
+                                BackgroundColor="White"
+                                Padding="5"
+                                Orientation="Horizontal">
+                                <Label
+                                    FontSize="16"
+                                    TextColor="Blue"
+                                    VerticalOptions="Center"
+                                    Text="{Binding Key}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.GroupHeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label
+                                    Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
+                                    HorizontalOptions="Start"
+                                    FontSize="20"
+                                    TextColor="Blue" />
+                                <Label
+                                    HorizontalOptions="Start"
+                                    FontSize="12"
+                                    Text="{Binding .}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content> 
+</ContentPage>
