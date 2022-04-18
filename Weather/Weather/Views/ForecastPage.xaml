@@ -6,9 +6,11 @@
     BackgroundColor="#010101">
     <ContentPage.Content>
         <StackLayout>
-            <Button
-                Clicked="Button_Clicked"
-                Text="Refresh" />
+            <StackLayout BackgroundColor="#f2f2f2" Padding="2, 2, 2, 2" Margin="0">
+                <Button
+                    Clicked="Button_Clicked"
+                    Text="Refresh" />
+            </StackLayout>
             <StackLayout
                 x:Name="errorMsg"
                 IsVisible="false">
@@ -52,15 +54,29 @@
                         <ViewCell>
                             <StackLayout
                                 BackgroundColor="#232323">
-                                <Label
-                                    Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
+                                <StackLayout
                                     HorizontalOptions="Start"
-                                    FontSize="20"
-                                    TextColor="White" />
-                                <Label
+                                    Orientation="Vertical"
+                                    Padding="3">
+                                    <Image
+                                        Source="{Binding Icon}"
+                                        HorizontalOptions="FillAndExpand"
+                                        WidthRequest="100" />
+                                </StackLayout>
+                                <StackLayout
                                     HorizontalOptions="Start"
-                                    FontSize="12" TextColor="White"
-                                    Text="{Binding .}" />
+                                    Orientation="Vertical">
+                                    <Label
+                                        Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
+                                        HorizontalOptions="Start"
+                                        FontSize="20"
+                                        TextColor="White" />
+                                    <Label
+                                        HorizontalOptions="Start"
+                                        FontSize="12"
+                                        TextColor="White"
+                                        Text="{Binding .}" />
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

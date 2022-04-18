@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resources\Icons\**" />
+    <EmbeddedResource Remove="Resources\Icons\**" />
+    <None Remove="Resources\Icons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Resources\Fonts\Courier Prime Code.ttf" />
     <None Remove="Resources\Fonts\Montserrat.otf" />
   </ItemGroup>

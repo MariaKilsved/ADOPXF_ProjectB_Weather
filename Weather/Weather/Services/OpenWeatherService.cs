@@ -96,6 +96,8 @@ namespace Weather.Services
             forecast.Items = forecastItems;
             //generate an event with different message if cached data
 
+            forecast.Items.ForEach(x => x.Icon = $"{x.Icon}.png");
+
             return forecast;
         }
         private DateTime UnixTimeStampToDateTime(double unixTimeStamp)

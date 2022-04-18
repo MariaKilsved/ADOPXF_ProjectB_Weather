@@ -104,6 +104,24 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="01d.png" />
+    <Content Include="01n.png" />
+    <Content Include="02d.png" />
+    <Content Include="02n.png" />
+    <Content Include="03d.png" />
+    <Content Include="03n.png" />
+    <Content Include="04d.png" />
+    <Content Include="04n.png" />
+    <Content Include="09d.png" />
+    <Content Include="09n.png" />
+    <Content Include="10d.png" />
+    <Content Include="10n.png" />
+    <Content Include="11d.png" />
+    <Content Include="11n.png" />
+    <Content Include="13d.png" />
+    <Content Include="13n.png" />
+    <Content Include="50d.png" />
+    <Content Include="50n.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
@@ -153,6 +171,9 @@
       <Project>{0FE0A056-BFE6-44AA-B937-7190443D1C79}</Project>
       <Name>Weather</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

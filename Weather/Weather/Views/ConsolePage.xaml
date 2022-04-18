@@ -8,15 +8,18 @@
     Padding="10,30,10,5"
     BackgroundColor="#010101">
     <StackLayout Padding="10" >
-        <Label Text="Simple Console Output" HorizontalOptions="Center" FontSize="24" TextColor="white"/>
-        <StackLayout Orientation="Horizontal" HeightRequest="50" HorizontalOptions="Center">
-            <Stepper
-                x:Name="stepper"
-                Minimum="0"
-                Increment="1"
-                VerticalOptions="Center"
-                BackgroundColor="#232323"
-                />
+        <Label Text="Simple Console Output" HorizontalOptions="Center" FontSize="24" TextColor="White"/>
+        <StackLayout
+            Orientation="Horizontal"
+            HeightRequest="50"
+            HorizontalOptions="Center">
+            <StackLayout BackgroundColor="#f2f2f2" Padding="2, 2, 2, 2" Margin="0" VerticalOptions="Center">
+                <Stepper
+                    x:Name="stepper"
+                    Minimum="0"
+                    Increment="1"
+                    VerticalOptions="Center" />
+            </StackLayout>
             <Label
                 Text="{Binding Value}"
                 BindingContext="{x:Reference stepper}"
