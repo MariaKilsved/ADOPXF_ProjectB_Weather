@@ -13,7 +13,15 @@
             <StackLayout
                 AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                 AbsoluteLayout.LayoutFlags="All">
-                <StackLayout
+                <StackLayout>
+                    <StackLayout.Padding>
+                        <OnIdiom
+                            x:TypeArguments="Thickness"
+                            Phone="0"
+                            Tablet="10, 0"
+                            Desktop="40, 0" />
+                    </StackLayout.Padding>
+                    <StackLayout
                     BackgroundColor="#f2f2f2"
                     Padding="2, 2, 2, 2"
                     Margin="0">
@@ -34,9 +42,10 @@
                         BackgroundColor="#232323"
                         TextColor="White" />
                 </StackLayout>
-                <StackLayout
-                    BackgroundColor="#232323">
-                    <ListView
+                    <StackLayout
+                        BackgroundColor="#232323"
+                        Padding="20">
+                        <ListView
                         x:Name="GroupedForecastListView"
                         IsGroupingEnabled="true"
                         HasUnevenRows="true">
@@ -52,7 +61,7 @@
                                         Margin="0"
                                         Padding="0">
                                         <Label
-                                            FontSize="Large"
+                                            FontSize="25"
                                             TextColor="White"
                                             VerticalOptions="Center"
                                             Text="{Binding Key, StringFormat='{0:d}'}" />
@@ -69,12 +78,12 @@
                                         Padding="0">
                                         <StackLayout
                                             HorizontalOptions="Start"
-                                            Orientation="Horizontal">
+                                            Orientation="Horizontal"
+                                            Padding="0, 0, 0, 20">
                                             <Image
                                                 Source="{Binding Icon}"
                                                 HorizontalOptions="FillAndExpand"
                                                 WidthRequest="50" />
-                                        </StackLayout>
                                         <StackLayout
                                             HorizontalOptions="Start"
                                             Orientation="Vertical">
@@ -89,11 +98,13 @@
                                                 TextColor="White"
                                                 Text="{Binding .}" />
                                         </StackLayout>
+                                            </StackLayout>
                                     </StackLayout>
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
+                </StackLayout>
                 </StackLayout>
             </StackLayout>
             <StackLayout
