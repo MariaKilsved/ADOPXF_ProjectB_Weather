@@ -2,21 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.ForecastPage"
-             Title="Miami">
+             Title=""
+    BackgroundColor="#010101">
     <ContentPage.Content>
         <StackLayout>
             <Button
                 Clicked="Button_Clicked"
-                Text="Refresh"></Button>
+                Text="Refresh" />
             <StackLayout
                 x:Name="errorMsg"
                 IsVisible="false">
                 <Label
-                    Text="Geolocation weather service error." />
-                <Label x:Name="errorMsgEx" Text=""/>
+                    Text="Geolocation weather service error."
+                    BackgroundColor="#232323"
+                    TextColor="White" />
+                <Label
+                    x:Name="errorMsgEx"
+                    Text=""
+                    BackgroundColor="#232323"
+                    TextColor="White" />
             </StackLayout>
             <ActivityIndicator
-                x:Name="loading" IsRunning="False"></ActivityIndicator>
+                x:Name="loading" IsRunning="False" Color="White"></ActivityIndicator>
             <ListView
                 x:Name="GroupedForecastListView"
                 IsGroupingEnabled="true"
@@ -28,12 +35,12 @@
                             <StackLayout
                                 HorizontalOptions="FillAndExpand"
                                 HeightRequest="40"
-                                BackgroundColor="White"
+                                BackgroundColor="#232323"
                                 Padding="5"
                                 Orientation="Horizontal">
                                 <Label
                                     FontSize="16"
-                                    TextColor="Blue"
+                                    TextColor="white"
                                     VerticalOptions="Center"
                                     Text="{Binding Key}" />
                             </StackLayout>
@@ -43,15 +50,16 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
+                            <StackLayout
+                                BackgroundColor="#232323">
                                 <Label
                                     Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
                                     HorizontalOptions="Start"
                                     FontSize="20"
-                                    TextColor="Blue" />
+                                    TextColor="White" />
                                 <Label
                                     HorizontalOptions="Start"
-                                    FontSize="12"
+                                    FontSize="12" TextColor="White"
                                     Text="{Binding .}" />
                             </StackLayout>
                         </ViewCell>

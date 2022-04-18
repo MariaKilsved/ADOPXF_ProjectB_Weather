@@ -10,10 +10,11 @@
             x:Name="MenuItemsListView"
             SeparatorVisibility="None"
             HasUnevenRows="true"
-            ItemsSource="{Binding MenuItems}">
+            ItemsSource="{Binding MenuItems}"
+            BackgroundColor="#dcdcdc">
             <ListView.Header>
                 <Grid
-                    BackgroundColor="#03A9F4">
+                    BackgroundColor="#dcdcdc">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
                             Width="10" />
@@ -36,7 +37,8 @@
                         Grid.Column="1"
                         Grid.Row="2"
                         Text="Weather project"
-                        Style="{DynamicResource SubtitleStyle}" />
+                        Style="{DynamicResource SubtitleStyle}"
+                        TextColor="#010101"/>
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
@@ -44,12 +46,14 @@
                     <ViewCell>
                         <StackLayout
                             Padding="15,10"
-                            HorizontalOptions="FillAndExpand">
+                            HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#dcdcdc">
                             <Label
                                 VerticalOptions="FillAndExpand"
                                 VerticalTextAlignment="Center"
                                 Text="{Binding Title}"
-                                FontSize="24" />
+                                FontSize="24"
+                                TextColor="#010101"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

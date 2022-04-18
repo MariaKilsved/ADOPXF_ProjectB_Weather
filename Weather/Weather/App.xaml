@@ -3,6 +3,71 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.App">
     <Application.Resources>
-
+        <Style
+            TargetType="Button" >
+            <Setter
+                Property="BackgroundColor"
+                Value="#232323" />
+            <Setter
+                Property="TextColor"
+                Value="White" />
+            <Setter
+                Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup
+                        x:Name="CommonStates">
+                        <VisualState
+                            x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="#232323" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            x:Name="Focused">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="#232323" />
+                                <Setter
+                                    Property="Opacity"
+                                    Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            x:Name="Disabled">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="#232323" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="#333333" />
+                                <Setter
+                                    Property="Opacity"
+                                    Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState
+                            x:Name="MouseOver">
+                            <VisualState.Setters>
+                                <Setter
+                                    Property="BackgroundColor"
+                                    Value="#333333" />
+                                <Setter
+                                    Property="Opacity"
+                                    Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

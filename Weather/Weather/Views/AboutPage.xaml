@@ -2,17 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.AboutPage"
-             Title="About Weather">
+             Title="About Weather"
+    BackgroundColor="#010101">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+        <Frame
+            BackgroundColor="#232323" Padding="24" CornerRadius="0">
             <Label Text="Project Part B" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Weather in Xamarin.Forms" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="This part of the project is about making a simple UI in to the console weather service made in project part A using Flyout." 
-               FontSize="16" Padding="30,0,30,0"/>
-        <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
+        <Label
+            Text="Weather in Xamarin.Forms"
+            FontSize="Title"
+            Padding="30,10,30,10"
+            TextColor="White" />
+        <Label Text="This part of the project is about making a simple UI in to the console weather service made in project part A using Flyout."
+            FontSize="16"
+            Padding="30,0,30,0"
+            TextColor="White" />
+        <Label
+            Text="Select a city and give it a try!"
+            FontSize="16"
+            Padding="30,0,30,0"
+            TextColor="White" />
+        <Label
+            FontSize="16"
+            Padding="30,24,30,0"
+            TextColor="White">
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
