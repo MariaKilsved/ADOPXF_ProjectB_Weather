@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define SimulateBadConnection
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,11 +51,14 @@ namespace Weather.Views
 
             try
             {
-                loading.IsVisible = true;
+                loading.IsRunning = true;
                 errorMsg.IsVisible = false;
                 errorMsgEx.Text = "";
                 await service.GetForecastAsync(Title);
                 t1 = service.GetForecastAsync(Title);
+#if SimulateBadConnection
+                await Task.Delay(5000);
+#endif
             }
             catch (Exception ex)
             {
@@ -68,13 +73,13 @@ namespace Weather.Views
                 //groupedforecast.City = Title;
                 //groupedforecast.Items = GroupedList;
                 GroupedForecastListView.ItemsSource = GroupedList;
-                loading.IsVisible = false;
+                loading.IsRunning = false;
             }
             else
             {
-                loading.IsVisible = false;
-                errorMsg.IsVisible = true;
                 errorMsgEx.Text = exception.Message;
+                loading.IsRunning = false;
+                errorMsg.IsVisible = true;
             }
         }
 

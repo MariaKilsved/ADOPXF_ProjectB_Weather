@@ -5,83 +5,109 @@
              Title=""
     BackgroundColor="#010101">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout BackgroundColor="#f2f2f2" Padding="2, 2, 2, 2" Margin="0">
-                <Button
-                    Clicked="Button_Clicked"
-                    Text="Refresh" />
+        <AbsoluteLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Margin="0"
+            Padding="0">
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                AbsoluteLayout.LayoutFlags="All">
+                <StackLayout
+                    BackgroundColor="#f2f2f2"
+                    Padding="2, 2, 2, 2"
+                    Margin="0">
+                    <Button
+                        Clicked="Button_Clicked"
+                        Text="Refresh" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="errorMsg"
+                    IsVisible="false">
+                    <Label
+                        Text="Geolocation weather service error."
+                        BackgroundColor="#232323"
+                        TextColor="White" />
+                    <Label
+                        x:Name="errorMsgEx"
+                        Text=""
+                        BackgroundColor="#232323"
+                        TextColor="White" />
+                </StackLayout>
+                <StackLayout
+                    BackgroundColor="#232323">
+                    <ListView
+                        x:Name="GroupedForecastListView"
+                        IsGroupingEnabled="true"
+                        HasUnevenRows="true">
+                        <ListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <ViewCell
+                                    Height="40">
+                                    <StackLayout
+                                        HorizontalOptions="FillAndExpand"
+                                        HeightRequest="40"
+                                        Orientation="Horizontal"
+                                        BackgroundColor="#232323"
+                                        Margin="0"
+                                        Padding="0">
+                                        <Label
+                                            FontSize="Large"
+                                            TextColor="White"
+                                            VerticalOptions="Center"
+                                            Text="{Binding Key, StringFormat='{0:d}'}" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.GroupHeaderTemplate>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout
+                                        BackgroundColor="#232323"
+                                        Margin="0"
+                                        Padding="0">
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Orientation="Horizontal">
+                                            <Image
+                                                Source="{Binding Icon}"
+                                                HorizontalOptions="FillAndExpand"
+                                                WidthRequest="50" />
+                                        </StackLayout>
+                                        <StackLayout
+                                            HorizontalOptions="Start"
+                                            Orientation="Vertical">
+                                            <Label
+                                                Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
+                                                HorizontalOptions="Start"
+                                                FontSize="20"
+                                                TextColor="White" />
+                                            <Label
+                                                HorizontalOptions="Start"
+                                                FontSize="12"
+                                                TextColor="White"
+                                                Text="{Binding .}" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
             </StackLayout>
             <StackLayout
-                x:Name="errorMsg"
-                IsVisible="false">
-                <Label
-                    Text="Geolocation weather service error."
-                    BackgroundColor="#232323"
-                    TextColor="White" />
-                <Label
-                    x:Name="errorMsgEx"
-                    Text=""
-                    BackgroundColor="#232323"
-                    TextColor="White" />
+                Orientation="Horizontal"
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+                <ActivityIndicator
+                    x:Name="loading"
+                    IsRunning="False"
+                    Color="White"
+                    VerticalOptions="Center"
+                    WidthRequest="20"
+                    HeightRequest="20"></ActivityIndicator>
             </StackLayout>
-            <ActivityIndicator
-                x:Name="loading" IsRunning="False" Color="White"></ActivityIndicator>
-            <ListView
-                x:Name="GroupedForecastListView"
-                IsGroupingEnabled="true"
-                HasUnevenRows="true">
-                <ListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell
-                            Height="40">
-                            <StackLayout
-                                HorizontalOptions="FillAndExpand"
-                                HeightRequest="40"
-                                BackgroundColor="#232323"
-                                Padding="5"
-                                Orientation="Horizontal">
-                                <Label
-                                    FontSize="16"
-                                    TextColor="white"
-                                    VerticalOptions="Center"
-                                    Text="{Binding Key}" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.GroupHeaderTemplate>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout
-                                BackgroundColor="#232323">
-                                <StackLayout
-                                    HorizontalOptions="Start"
-                                    Orientation="Vertical"
-                                    Padding="3">
-                                    <Image
-                                        Source="{Binding Icon}"
-                                        HorizontalOptions="FillAndExpand"
-                                        WidthRequest="100" />
-                                </StackLayout>
-                                <StackLayout
-                                    HorizontalOptions="Start"
-                                    Orientation="Vertical">
-                                    <Label
-                                        Text="{Binding DateTime, StringFormat='{0:HH\\:mm}'}"
-                                        HorizontalOptions="Start"
-                                        FontSize="20"
-                                        TextColor="White" />
-                                    <Label
-                                        HorizontalOptions="Start"
-                                        FontSize="12"
-                                        TextColor="White"
-                                        Text="{Binding .}" />
-                                </StackLayout>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        </AbsoluteLayout>
     </ContentPage.Content> 
 </ContentPage>
